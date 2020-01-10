@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="T1809E_UWP_CXL_ASM.Pages.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T1809E_UWP_CXL_ASM.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1280">
+
+    <Grid>
+        <Image Source="/Assets/trap.jpg" Margin="-6,0,6,0"/>
+        <muxc:NavigationView x:ConnectionId='2'  x:Name="nvSample" HorizontalAlignment="Center" Width="1280">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem x:ConnectionId='3'                            Icon="Permissions" Content="Login" Tag="SamplePage1" />
+                <muxc:NavigationViewItem x:ConnectionId='4'                               Icon="MusicInfo" Content="Song List" Tag="SamplePage2" />
+                <muxc:NavigationViewItem x:ConnectionId='5'                               Icon="Edit" Content="Register" Tag="SamplePage3" />
+                <muxc:NavigationViewItem x:ConnectionId='6'                              Icon="Add" Content="Add Song" Tag="SamplePage4" />
+            </muxc:NavigationView.MenuItems>
+            <Frame x:ConnectionId='7' x:Name="MainPanel" Margin="-321,0,-202,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </muxc:NavigationView>
+    </Grid>
+</Page>
+
