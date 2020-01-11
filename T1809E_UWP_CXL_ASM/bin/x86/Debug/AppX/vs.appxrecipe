@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-10T11:32:11.075</Modified>
+      <Modified>2020-01-11T10:10:52.415</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\T1809E_UWP_CXL_ASM.exe">
       <PackagePath>entrypoint\T1809E_UWP_CXL_ASM.exe</PackagePath>
-      <Modified>2020-01-10T11:32:04.545</Modified>
+      <Modified>2020-01-11T10:10:49.647</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\.nuget\packages\newtonsoft.json\12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -110,31 +110,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.163</Modified>
+      <Modified>2020-01-11T10:10:49.238</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.163</Modified>
+      <Modified>2020-01-11T10:10:49.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Pages\AddSong.xbf">
       <PackagePath>Pages\AddSong.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.164</Modified>
+      <Modified>2020-01-11T10:10:49.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Pages\Home.xbf">
       <PackagePath>Pages\Home.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.164</Modified>
+      <Modified>2020-01-11T10:10:49.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Pages\Login.xbf">
       <PackagePath>Pages\Login.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.164</Modified>
+      <Modified>2020-01-11T10:10:49.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Pages\RegisterPage.xbf">
       <PackagePath>Pages\RegisterPage.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.160</Modified>
+      <Modified>2020-01-11T10:10:49.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Pages\SongList.xbf">
       <PackagePath>Pages\SongList.xbf</PackagePath>
-      <Modified>2020-01-09T14:31:19.164</Modified>
+      <Modified>2020-01-11T10:10:49.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -142,11 +142,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-01-10T10:41:17.253</Modified>
+      <Modified>2020-01-11T10:10:50.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Core\T1809E_UWP_CXL_ASM.exe">
       <PackagePath>T1809E_UWP_CXL_ASM.exe</PackagePath>
-      <Modified>2020-01-10T11:32:11.021</Modified>
+      <Modified>2020-01-11T10:10:52.376</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

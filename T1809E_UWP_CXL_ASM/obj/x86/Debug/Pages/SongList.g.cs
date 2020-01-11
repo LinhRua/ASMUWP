@@ -287,7 +287,6 @@ namespace T1809E_UWP_CXL_ASM.Pages
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.18362.1")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.Obsolete]
         public void Connect(int connectionId, object target)
         {
             switch(connectionId)
