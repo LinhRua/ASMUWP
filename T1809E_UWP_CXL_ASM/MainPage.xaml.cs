@@ -82,7 +82,7 @@ namespace T1809E_UWP_CXL_ASM
 
         private void Submit_OnClick(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri("https://2-dot-backup-server-001.appspot.com/_api/v2/members");
+            Uri uri = new Uri("https://2-dot-backup-server-002.appspot.com/_api/v2/members");
             var member = new Member();
             member.firstName = firstName.Text;
             member.lastName = lastName.Text;

@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-11T10:10:52.415</Modified>
+      <Modified>2020-01-11T10:59:22.594</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\T1809E_UWP_CXL_ASM.exe">
       <PackagePath>entrypoint\T1809E_UWP_CXL_ASM.exe</PackagePath>
-      <Modified>2020-01-11T10:10:49.647</Modified>
+      <Modified>2020-01-11T10:59:18.916</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\.nuget\packages\newtonsoft.json\12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -146,7 +146,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Linh Rua\source\repos\T1809E_UWP_CXL_ASM\T1809E_UWP_CXL_ASM\bin\x86\Debug\Core\T1809E_UWP_CXL_ASM.exe">
       <PackagePath>T1809E_UWP_CXL_ASM.exe</PackagePath>
-      <Modified>2020-01-11T10:10:52.376</Modified>
+      <Modified>2020-01-11T10:59:22.576</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
