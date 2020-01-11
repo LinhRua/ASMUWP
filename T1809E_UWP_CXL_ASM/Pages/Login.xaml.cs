@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Newtonsoft.Json;
+using T1809E_UWP_CXL_ASM.Services;
 using T1809E_UWP_CXL_ASM.Utils;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,7 +27,11 @@ namespace T1809E_UWP_CXL_ASM.Pages
 
     public sealed partial class Login : Page
     {
-        private readonly Validator validator = new Validator();
+        private AuthenticationService _server = new AuthenticationService();
+        public static string Token;
+
+        private Validator validator = new Validator();
+
 
         public Login()
         {
@@ -35,10 +40,12 @@ namespace T1809E_UWP_CXL_ASM.Pages
 
         private async void LoginHanlde(object sender, RoutedEventArgs e)
         {
+
             if (validator.IsEmail(email.Text))
             {
                 emailAlert.Text = "";
-                if (validator.IsNotNullAndNotEmpty(password.Password)){
+                if (validator.IsNotNullAndNotEmpty(password.Password))
+                {
                     passwordAlert.Text = "";
                     //Next
                 }
@@ -49,40 +56,30 @@ namespace T1809E_UWP_CXL_ASM.Pages
             }
             else
             {
-                var content = new LoginNTT
-                {
-                    email = email.Text,
-                    password = password.Password
-                };
-                var httpClient = new HttpClient();
-                var json = JsonConvert.SerializeObject(content);
-                var para = new StringContent(json, Encoding.UTF8, "application/json");
-                var response =
-                    await httpClient.PostAsync(
-                        "https://2-dot-backup-server-002.appspot.com/_api/v2/members/authentication",
-                        para);
-                var resp = await response.Content.ReadAsStringAsync();
-                LoginTk member = JsonConvert.DeserializeObject<LoginTk>(resp);
-
-                var Url = Path.Combine(
-                    "C://Users//LinhRua//source//repos//T1809E_UWP_CXL_ASM//T1809E_UWP_CXL_ASM//Assets//token.txt");
-                System.IO.File.WriteAllText(Url, member.token.ToString());
+                emailAlert.Text = "Inlavid email, please enter valid email format.";
             }
 
+            var email1 = email.Text;
+            var password1 = password.Password;
+            Token = await this._server.LoginTask(email1, password1);
+            this.Frame.Navigate(typeof(Pages.Login));
+
+            var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+            savePicker.SuggestedStartLocation =
+                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            savePicker.FileTypeChoices.Add("Plain Text", new List<string>() {".txt"});
+            savePicker.SuggestedFileName = "New Document";
+            var file = await savePicker.PickSaveFileAsync();
+            if (file != null)
             {
-            emailAlert.Text = "Inlavid email, please enter valid email format.";
-        }
-    }
-        public class LoginNTT
-    {
-        public string email { get; set; }
-        public string password { get; set; }
-    }
-        public class LoginTk
-        {
-            public string token { get; set; }
-            public string secretToken { get; set; }
+                FileHandleService.WriteToFile(file, Token);
+            }
+
+
+            //////var result = await FileHandleService.ReadFile("hello.txt");
+            //////Debug.WriteLine(result);   
 
         }
+
     }
 }

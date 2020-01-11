@@ -140,6 +140,7 @@
       <DependentUpon>SongList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\FileHandleService.cs" />
     <Compile Include="Services\SongService.cs" />
     <Compile Include="Utils\Validator.cs" />
