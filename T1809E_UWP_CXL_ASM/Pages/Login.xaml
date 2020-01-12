@@ -9,7 +9,7 @@
      Width="759" Height="341">
 
     <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-        <Grid Width="700" Height="285" RowSpacing="0" ColumnSpacing="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,28">
+        <Grid Width="650" Height="285" RowSpacing="0" ColumnSpacing="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,28">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="7*"/>
@@ -29,7 +29,7 @@
             <TextBlock Grid.Row="1" Grid.Column="1" Text="" x:Name="passwordAlert" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="11" FontStyle="Italic" Foreground="Red" Margin="0,0,7,31" Grid.RowSpan="2"/>
 
             <CheckBox Grid.Column="1" Grid.Row="2" Content="Remember me." HorizontalAlignment="Center" FontSize="18"/>
-            <Button x:Name="submit" Grid.Column="1" Grid.Row="10" Height="50" Content="Login" Width="300" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#FF1F3D55" FontSize="18" Click="LoginHanlde"/>
+            <Button x:Name="submit" Grid.Column="1" Grid.Row="10" Height="50" Content="Login" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF1F3D55" FontSize="18" Click="LoginHanlde"/>
         </Grid>
     </Grid>
 </Page>
