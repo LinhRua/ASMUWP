@@ -18,7 +18,7 @@ namespace T1809E_UWP_CXL_ASM.Services
                 SongName = "Mượn rượu tỏ tình",
                 Link = " https://c1-ex-swe.nixcdn.com/NhacCuaTui976/MuonRuouToTinh-EmilyBigDaddy-5871420.mp3",
                 Views = 123,
-                Description = "Mượn rượu tỏ tình",
+                Description = "Bigdaddy, Emily",
                 Thumbnail =
                     "https://znews-photo.zadn.vn/w1024/Uploaded/qfssu/2019_02_08/batch_dsc_2961_1.jpg"
             });
@@ -27,7 +27,7 @@ namespace T1809E_UWP_CXL_ASM.Services
                 SongName = "Lang Thang",
                 Link = "https://c1-ex-swe.nixcdn.com/NhacCuaTui993/LangThang-Rhymastic-6184222.mp3",
                 Views = 456,
-                Description = "Lang Thang",
+                Description = "Rhymastic",
                 Thumbnail = "https://photo-zmp3.zadn.vn/cover_artist/e/0/e09915ec25d2d8e52aaf0d9381121da8_1503980596.jpg"
             });
             list.Add(new Song()
