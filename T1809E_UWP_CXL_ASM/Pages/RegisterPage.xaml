@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    VerticalAlignment="Center" HorizontalAlignment="Center" Width="1280" Height="800">
+    VerticalAlignment="Center" HorizontalAlignment="Center" Width="1200" Height="700">
 
     <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
         <Grid.RowDefinitions>
