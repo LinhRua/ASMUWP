@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace T1809E_UWP_CXL_ASM.Utils
 {
     class Validator
     {
-        private string EmailRule = "^[a-z][a-z0-9_.]{5,32}@[a-z0-9]{2,}(.[a-z0-9]{2,4}){1,2}$";
-        private string PhoneRule = "^[+][8][4](09|03|01[2|6|8|9])+([0-9]{8})$";
         public bool IsNotNullAndNotEmpty(string str)
         {
-            return str != null && !str.Equals("");
+            return !string.IsNullOrEmpty(str);
         }
 
         public bool IsPasswordMatch(string password1, string password2)
@@ -23,12 +22,22 @@ namespace T1809E_UWP_CXL_ASM.Utils
 
         public bool IsPhoneNumber(string phoneNumber)
         {
-            return Regex.IsMatch(phoneNumber, PhoneRule);
+            return Regex.IsMatch(phoneNumber, Constants.PHONE_RULE);
         }
 
         public bool IsEmail(string email)
         {
-            return Regex.IsMatch(email, EmailRule);
+            return Regex.IsMatch(email, Constants.EMAIL_RULE);
+        }
+
+        public bool IsValidInput(string str)
+        {
+            return Regex.IsMatch(str, Constants.VALID_INPUT);
+        }
+
+        public bool IsMusicLink(string link)
+        {
+            return Regex.IsMatch(link, Constants.VALID_MUSIC_LINK);
         }
     }
 }

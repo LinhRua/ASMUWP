@@ -19,23 +19,26 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Newtonsoft.Json.Linq;
+using T1809E_UWP_CXL_ASM.Services;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace T1809E_UWP_CXL_ASM
-{
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+
+    {
+
     public sealed partial class RegisterPage : Page
     {
         private int _choosedGender = 2;
         private String _birthDay;
         private Validator validator = new Validator();
+        private readonly IMemberService memberService = new MemberService();
         public RegisterPage()
         {
             this.InitializeComponent();
         }
+
         private void Gender_Choose(object sender, RoutedEventArgs e)
         {
             var chooseRadioButton = (RadioButton)sender;
@@ -56,7 +59,7 @@ namespace T1809E_UWP_CXL_ASM
 
         public void IsPasswordConfirm(object sender, KeyRoutedEventArgs e)
         {
-            if (!validator.IsPasswordMatch(Pwdpassword.Password, confirmPassword.Password))
+            if (!validator.IsPasswordMatch(password.Password, confirmPassword.Password))
             {
                 pcfAlert.Text = "Password did not match.";
             }
@@ -67,7 +70,7 @@ namespace T1809E_UWP_CXL_ASM
         }
         public void IsEmailValid(object sender, KeyRoutedEventArgs e)
         {
-            if (!validator.IsEmail(Txtemail.Text))
+            if (!validator.IsEmail(email.Text))
             {
                 emailAlert.Text = "Please enter valid email.";
             }
@@ -78,7 +81,7 @@ namespace T1809E_UWP_CXL_ASM
         }
         public void IsPhoneNumberValid(object sender, KeyRoutedEventArgs e)
         {
-            if (!validator.IsPhoneNumber(Txtphone.Text))
+            if (!validator.IsPhoneNumber(phone.Text))
             {
                 phoneAlert.Text = "Enter Viet Nam's phone number (+84xxxxxxxxx).";
             }
@@ -108,47 +111,43 @@ namespace T1809E_UWP_CXL_ASM
             }
         }
 
-        private void RegisterSubmit(object sender, RoutedEventArgs e)
+        private async void RegisterSubmit(object sender, RoutedEventArgs e)
         {
-
-            bool check = true;
+            loading.IsActive = true;
             var member = new Member();
-            member.firstName = TxtfirstName.Text;
-            check = IsNotNull(TxtfirstName.Text);
-            member.lastName = TxtlastName.Text;
-            check = IsNotNull(TxtlastName.Text);
-            member.address = Txtaddress.Text;
-            check = IsNotNull(Txtaddress.Text);
-            member.password = Pwdpassword.Password;
-            check = IsNotNull(Pwdpassword.Password);
-            member.phone = Txtphone.Text;
+            member.firstName = firstName.Text;
+            member.lastName = lastName.Text;
+            member.address = address.Text;
+            member.password = password.Password;
+            member.phone = phone.Text;
             member.gender = _choosedGender;
             member.birthday = _birthDay;
-            check = IsNotNull(_birthDay);
-            member.email = Txtemail.Text;
-            member.avatar = Txtavatar.Text;
-            if (check)
+            member.email = email.Text;
+            member.avatar = avatar.Text;
+            if (member.IsValid())
             {
-                NotNullAlert.Text = "success";
-                var memberJson = JsonConvert.SerializeObject(member);
-                HttpContent contentToSend = new StringContent(memberJson, Encoding.UTF8, "application/Json");
-                SubmitData(contentToSend);
+                NotNullAlert.Text = "Please wait!";
+                string resp = await memberService.Register(member);
+                var statusCode = (string)JObject.Parse(resp)["status"];
+                if (statusCode == "1")
+                {
+                    this.Frame.Navigate(typeof(Pages.Login));
+                }
+                else
+                {
+                    NotNullAlert.Text = "Register failed!";
+                }
             }
             else
             {
-                //DO some thing return an error
+                NotNullAlert.Text = "Please fill all field before submit!";
             }
-
         }
 
-        private async void SubmitData(HttpContent contentToSend)
+        private void redirectLogin(object sender, RoutedEventArgs e)
         {
-            HttpClient httpClient = new HttpClient();
-            var respone = await httpClient.
-                PostAsync("https://2-dot-backup-server-002.appspot.com/_api/v2/members", contentToSend);
-            var stringContent = await respone.Content.ReadAsStringAsync();
-            var returnMember = JsonConvert.DeserializeObject<Member>(stringContent);
-            Debug.WriteLine(returnMember.id);
+            this.Frame.Navigate(typeof(Pages.Login));
         }
     }
 }
+

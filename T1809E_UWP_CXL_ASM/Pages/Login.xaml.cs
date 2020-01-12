@@ -74,8 +74,6 @@ namespace T1809E_UWP_CXL_ASM.Pages
             {
                 FileHandleService.WriteToFile(file, Token);
             }
-
-
             //////var result = await FileHandleService.ReadFile("hello.txt");
             //////Debug.WriteLine(result);   
 

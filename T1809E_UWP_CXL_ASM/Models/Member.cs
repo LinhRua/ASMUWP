@@ -19,6 +19,14 @@ namespace T1809E_UWP_CXL_ASM.Models
         public int gender { get; set; }
         public string email { get; set; }
         public string birthday { get; set; }
+
+        public bool IsValid()
+        {
+            return !string.IsNullOrEmpty(this.firstName)
+                   && !string.IsNullOrEmpty(this.lastName)
+                   && !string.IsNullOrEmpty(this.password)
+                   && !string.IsNullOrEmpty(this.address);
+        }
     }
 
 
